@@ -3,55 +3,118 @@ import tkinter as tk
 
 # TODO sto ako kliknemo vise operacija? - uzimamo zadnju operaciju koja je kliknuta
 # TODO kombiniranje vise operacija - 2 + 3 / 4 - 9
-
+math_expression = ''
 
 def insert_one():
-    print('1')
+    global math_expression 
+    math_expression += '1'  
+    lbl_display_var.set(math_expression)
+
 
 def insert_two():
-    print('2')
+    global math_expression 
+    math_expression += '2'
+    lbl_display_var.set(math_expression)
+
 
 def insert_three():
-    print('3')
+    global math_expression 
+    math_expression += '3'
+    lbl_display_var.set(math_expression)
+
 
 def insert_add():
-    print('+')
+    global math_expression 
+    math_expression += ' + '
+    lbl_display_var.set(math_expression)
+
 
 def insert_four():
-    print('4')
+    global math_expression 
+    math_expression += '4'
+    lbl_display_var.set(math_expression)
     
-def insert_five():
-    print('5')
-    
-def insert_six():
-    print('6')
 
-def insert_substract():
-    print('-')
+def insert_five():
+    global math_expression 
+    math_expression += '5'
+    lbl_display_var.set(math_expression)
     
+
+def insert_six():
+    global math_expression 
+    math_expression += '6'
+    lbl_display_var.set(math_expression)
+
+
+def insert_subtract():
+    global math_expression 
+    math_expression += ' - '
+    lbl_display_var.set(math_expression)
+    
+
 def insert_seven():
-    print('7')
+    global math_expression 
+    math_expression += '7'
+    lbl_display_var.set(math_expression)
+
 
 def insert_eight():
-    print('8')
+    global math_expression 
+    math_expression += '8'
+    lbl_display_var.set(math_expression)
+
 
 def insert_nine():
-    print('9')
+    global math_expression 
+    math_expression += '9'
+    lbl_display_var.set(math_expression)
+
 
 def insert_multiply():
-    print('*')
+    global math_expression 
+    math_expression += ' * '
+    lbl_display_var.set(math_expression)
+
 
 def cancel():
-    print('C')
+    global math_expression
+    math_expression = ''
+    lbl_display_var.set('_')
+
 
 def insert_zero():
-    print('0')
+    global math_expression 
+    math_expression += '0'
+    lbl_display_var.set(math_expression)
+
 
 def calculate():
-    print('=')
+    if '+' in math_expression:
+        first, last = math_expression.split(' + ')
+        lbl_display_var.set(str(int(first) + int(last)))
+    elif '-' in math_expression:
+        first, last = math_expression.split(' - ')
+        lbl_display_var.set(str(int(first) - int(last)))
+    elif '*' in math_expression:
+        first, last = math_expression.split(' * ')
+        lbl_display_var.set(str(int(first) * int(last)))
+    elif '/' in math_expression:
+        first, last = math_expression.split(' / ')
+        print(first)
+        print(last)
+        if last != '0':
+            lbl_display_var.set(str(int(first) / int(last)))
+        else:
+            lbl_display_var.set('Dijeljenje s nulom!!!')
+    else:
+        lbl_display_var.set('Opearcija ne postoji')
+
 
 def insert_division():
-    print('/')
+    global math_expression 
+    math_expression += ' / '
+    lbl_display_var.set(math_expression)
 
 
 
@@ -64,8 +127,10 @@ main_window.rowconfigure(0, minsize=100)
 main_window.rowconfigure((1, 2, 3, 4), minsize=75)
 
 # PROSTOR ZA WIDGETS
+lbl_display_var = tk.StringVar()
+lbl_display_var.set('_')
 lbl_display = tk.Label(main_window,
-                       text='Prikaz rezultata',
+                       textvariable=lbl_display_var,
                        font=('Segoe UI', 20)).grid(row=0, column=0, columnspan=4)
 
 btn_one = tk.Button(main_window,
@@ -96,10 +161,10 @@ btn_six = tk.Button(main_window,
                     text='6',
                     font=('Segoe UI', 12),
                     command=insert_six).grid(column=2, row=2, sticky='NESW')
-btn_substract = tk.Button(main_window,
+btn_subtract = tk.Button(main_window,
                     text='-',
                     font=('Segoe UI', 12),
-                    command=insert_substract).grid(column=3, row=2, sticky='NESW')
+                    command=insert_subtract).grid(column=3, row=2, sticky='NESW')
 btn_seven = tk.Button(main_window,
                     text='7',
                     font=('Segoe UI', 12),
