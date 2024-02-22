@@ -6,37 +6,52 @@ import tkinter as tk
 
 
 def insert_one():
-    pass
+    print('1')
+
 def insert_two():
-    pass
+    print('2')
+
 def insert_three():
-    pass
+    print('3')
+
 def insert_add():
-    pass
+    print('+')
+
 def insert_four():
-    pass
+    print('4')
+    
 def insert_five():
-    pass
+    print('5')
+    
 def insert_six():
-    pass
+    print('6')
+
 def insert_substract():
-    pass
+    print('-')
+    
 def insert_seven():
-    pass
+    print('7')
+
 def insert_eight():
-    pass
+    print('8')
+
 def insert_nine():
-    pass
+    print('9')
+
 def insert_multiply():
-    pass
+    print('*')
+
 def cancel():
-    pass
+    print('C')
+
 def insert_zero():
-    pass
+    print('0')
+
 def calculate():
-    pass
+    print('=')
+
 def insert_division():
-    pass
+    print('/')
 
 
 
