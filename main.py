@@ -101,8 +101,6 @@ def calculate():
         lbl_display_var.set(str(int(first) * int(last)))
     elif '/' in math_expression:
         first, last = math_expression.split(' / ')
-        print(first)
-        print(last)
         if last != '0':
             lbl_display_var.set(str(int(first) / int(last)))
         else:
@@ -126,7 +124,6 @@ main_window.columnconfigure((0, 1, 2, 3), minsize=75)
 main_window.rowconfigure(0, minsize=100)
 main_window.rowconfigure((1, 2, 3, 4), minsize=75)
 
-# PROSTOR ZA WIDGETS
 lbl_display_var = tk.StringVar()
 lbl_display_var.set('_')
 lbl_display = tk.Label(main_window,
