@@ -128,6 +128,8 @@ lbl_display_var = tk.StringVar()
 lbl_display_var.set('_')
 lbl_display = tk.Label(main_window,
                        textvariable=lbl_display_var,
+                       anchor='e',
+                       justify=tk.LEFT,
                        font=('Segoe UI', 20)).grid(row=0, column=0, columnspan=4)
 
 btn_one = tk.Button(main_window,
@@ -194,8 +196,6 @@ btn_division = tk.Button(main_window,
                     text='/',
                     font=('Segoe UI', 12),
                     command=insert_division).grid(column=3, row=4, sticky='NESW')
-
-
 
 
 main_window.mainloop()
